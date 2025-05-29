@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './store';
 import Cart from "./components/Cart";
@@ -6,10 +7,13 @@ import Cart from "./components/Cart";
 function App() {
   return (
       <Provider store={store}>
-        <div className="app">
-          <h1>Корзина покупок</h1>
-          <Cart />
-        </div>
+          <BrowserRouter basename={process.env.PUBLIC_URL}>
+              <div className="app">
+                  <Routes>
+                      <Route path="/" element={<Cart />} />
+                  </Routes>
+              </div>
+          </BrowserRouter>
       </Provider>
   );
 }

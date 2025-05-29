@@ -7,17 +7,17 @@ const CartItem = ({ item }) => {
 
     return (
         <li className="cart-item">
-            <span className="cart-item__name">{item.title}</span>
-            <div className="cart-item__controls">
+            <span className="cart-item_name">{item.title}</span>
+            <div className="cart-item_controls">
                 <button
-                    className={`cart-item__btn ${item.count === 1 ? 'cart-item__btn--warning' : ''}`}
+                    className={`cart-item_btn ${item.count === 1 ? 'cart-item_btn--warning' : ''}`}
                     onClick={() => dispatch(decrement(item.id))}
                 >
                     -
                 </button>
-                <span className="cart-item__count">{item.count}</span>
+                <span className="cart-item_count">{item.count}</span>
                 <button
-                    className="cart-item__btn"
+                    className="cart-item_btn"
                     onClick={() => dispatch(increment(item.id))}
                     disabled={item.count >= 25}
                 >

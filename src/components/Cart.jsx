@@ -11,14 +11,14 @@ const Cart = () => {
 
     return (
         <div className="cart">
-            <h1 className="cart__title">Корзина</h1>
+            <h1 className="cart_title">Корзина</h1>
 
             <AddItemButton onClick={() => dispatch(addItem())} />
 
             {items.length === 0 ? (
                 <EmptyCart />
             ) : (
-                <ul className="cart__list">
+                <ul className="cart_list">
                     {items.map(item => (
                         <CartItem key={item.id} item={item} />
                     ))}
